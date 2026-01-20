@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Islamic-inspired peaceful palette */
+    --background: 160 30% 98%;
+    --foreground: 160 40% 10%;
+
+    --card: 160 20% 99%;
+    --card-foreground: 160 40% 10%;
+
+    --popover: 160 20% 99%;
+    --popover-foreground: 160 40% 10%;
+
+    /* Deep teal/green - Islamic inspired */
+    --primary: 168 65% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft sage */
+    --secondary: 160 25% 92%;
+    --secondary-foreground: 160 40% 20%;
+
+    --muted: 160 15% 94%;
+    --muted-foreground: 160 20% 45%;
+
+    /* Gold accent */
+    --accent: 45 80% 55%;
+    --accent-foreground: 45 80% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 88%;
+    --input: 160 20% 88%;
+    --ring: 168 65% 35%;
+
+    --radius: 0.75rem;
+
+    /* Heatmap colors - prayer completion levels */
+    --heatmap-0: 160 20% 94%;
+    --heatmap-1: 168 45% 80%;
+    --heatmap-2: 168 55% 65%;
+    --heatmap-3: 168 60% 50%;
+    --heatmap-4: 168 70% 35%;
+    --heatmap-5: 168 80% 25%;
+
+    /* Gold gradient for special achievements */
+    --gold-light: 45 90% 65%;
+    --gold-dark: 40 85% 45%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 160 15% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 160 15% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 160 15% 95%;
+
+    --primary: 168 60% 45%;
+    --primary-foreground: 160 30% 8%;
+
+    --secondary: 160 20% 18%;
+    --secondary-foreground: 160 15% 90%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 160 15% 60%;
+
+    --accent: 45 75% 50%;
+    --accent-foreground: 45 80% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 168 60% 45%;
+
+    --heatmap-0: 160 15% 15%;
+    --heatmap-1: 168 40% 25%;
+    --heatmap-2: 168 50% 35%;
+    --heatmap-3: 168 55% 45%;
+    --heatmap-4: 168 60% 55%;
+    --heatmap-5: 168 70% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .heatmap-cell {
+    @apply rounded-sm transition-all duration-200 hover:scale-110 hover:ring-2 hover:ring-primary/30;
+  }
+
+  .heatmap-0 { background-color: hsl(var(--heatmap-0)); }
+  .heatmap-1 { background-color: hsl(var(--heatmap-1)); }
+  .heatmap-2 { background-color: hsl(var(--heatmap-2)); }
+  .heatmap-3 { background-color: hsl(var(--heatmap-3)); }
+  .heatmap-4 { background-color: hsl(var(--heatmap-4)); }
+  .heatmap-5 { background-color: hsl(var(--heatmap-5)); }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-dark)));
+  }
+
+  .stat-card {
+    @apply glass-card rounded-xl p-4 hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .prayer-checkbox {
+    @apply w-5 h-5 rounded-md border-2 border-primary/40 transition-all duration-200;
+  }
+
+  .prayer-checkbox-checked {
+    @apply bg-primary border-primary;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-dark)));
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
