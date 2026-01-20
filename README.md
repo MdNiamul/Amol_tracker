@@ -20,8 +20,11 @@ Amol Tracker is a browser-based tracking tool that helps users keep track of act
 (Add more details here based on what your app actually does — e.g., filters, analytics, login, API integrations, etc.)
 
 🧱 Technology Stack
-Layer	Technology
-Frontend	HTML, CSS, JavaScript, Reac.js, Typescript 
+Layer	Technology,
+
+Frontend	HTML, CSS, 
+JavaScript, Reac.js, Typescript 
+
 Deployment	Netlify
 (Optional) Framework	(React / Vue / Angular / Svelte etc.)
 
