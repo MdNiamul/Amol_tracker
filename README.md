@@ -3,6 +3,7 @@
 A simple and intuitive tracker application deployed on Netlify for managing and tracking items or data in real time.
 
 🔗 Live Demo: https://silly-seahorse-bec84e.netlify.app/
+
 🔗 GIT Repo: https://github.com/MdNiamul/Amol_tracker.git
 
 🧠 Overview
